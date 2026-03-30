@@ -438,134 +438,10 @@ DELETE /exams/1
 
 ---
 
-## 5. INCIDENTS ENDPOINTS
 
-### 5.1 Report Incident
-```http
-POST /incidents
-Content-Type: application/json
+## 5. DOCUMENTS ENDPOINTS
 
-{
-  "room_id": 1,
-  "reporter_id": 789,
-  "description": "Broken projector in classroom",
-  "equipment": "Projector"
-}
-```
-
-**Response** (201 Created):
-```json
-{
-  "id": 1,
-  "room_id": 1,
-  "reporter_id": 789,
-  "description": "Broken projector in classroom",
-  "equipment": "Projector",
-  "status": "reported",
-  "created_at": "2024-03-08T10:30:00"
-}
-```
-
-### 5.2 Get All Incidents
-```http
-GET /incidents
-```
-
-**Query Parameters**:
-- `status` (optional): Filter by status (reported, analyzed, resolved)
-
-**Example with filter**:
-```http
-GET /incidents?status=reported
-```
-
-**Response** (200 OK):
-```json
-[
-  {
-    "id": 1,
-    "room_id": 1,
-    "reporter_id": 789,
-    "description": "Broken projector in classroom",
-    "equipment": "Projector",
-    "status": "reported",
-    "created_at": "2024-03-08T10:30:00"
-  }
-]
-```
-
-### 5.3 Get Incident by ID
-```http
-GET /incidents/1
-```
-
-**Response** (200 OK):
-```json
-{
-  "id": 1,
-  "room_id": 1,
-  "reporter_id": 789,
-  "description": "Broken projector in classroom",
-  "equipment": "Projector",
-  "status": "reported",
-  "created_at": "2024-03-08T10:30:00"
-}
-```
-
-### 5.4 Update Incident
-```http
-PUT /incidents/1
-Content-Type: application/json
-
-{
-  "description": "Updated: Projector repair scheduled for March 10"
-}
-```
-
-**Response** (200 OK):
-```json
-{
-  "id": 1,
-  "room_id": 1,
-  "reporter_id": 789,
-  "description": "Updated: Projector repair scheduled for March 10",
-  "equipment": "Projector",
-  "status": "reported",
-  "created_at": "2024-03-08T10:30:00"
-}
-```
-
-### 5.5 Resolve Incident
-```http
-PUT /incidents/1/resolve
-```
-
-**Response** (200 OK):
-```json
-{
-  "id": 1,
-  "room_id": 1,
-  "reporter_id": 789,
-  "description": "Updated: Projector repair scheduled for March 10",
-  "equipment": "Projector",
-  "status": "resolved",
-  "created_at": "2024-03-08T10:30:00"
-}
-```
-
-### 5.6 Delete Incident
-```http
-DELETE /incidents/1
-```
-
-**Response** (204 No Content):
-(Empty body)
-
----
-
-## 6. DOCUMENTS ENDPOINTS
-
-### 6.1 Request Document
+### 5.1 Request Document
 ```http
 POST /documents
 Content-Type: application/json
@@ -587,7 +463,7 @@ Content-Type: application/json
 }
 ```
 
-### 6.2 Get All Document Requests
+### 5.2 Get All Document Requests
 ```http
 GET /documents
 ```
@@ -613,7 +489,7 @@ GET /documents?status=pending
 ]
 ```
 
-### 6.3 Get Document Request by ID
+### 5.3 Get Document Request by ID
 ```http
 GET /documents/1
 ```
@@ -629,7 +505,7 @@ GET /documents/1
 }
 ```
 
-### 6.4 Get Document Requests by Student
+### 5.4 Get Document Requests by Student
 ```http
 GET /documents/student/123
 ```
@@ -654,7 +530,7 @@ GET /documents/student/123
 ]
 ```
 
-### 6.5 Update Document Request
+### 5.5 Update Document Request
 ```http
 PUT /documents/1
 Content-Type: application/json
@@ -675,7 +551,7 @@ Content-Type: application/json
 }
 ```
 
-### 6.6 Approve Document Request
+### 5.6 Approve Document Request
 ```http
 PUT /documents/1/approve
 ```
@@ -691,7 +567,7 @@ PUT /documents/1/approve
 }
 ```
 
-### 6.7 Reject Document Request
+### 5.7 Reject Document Request
 ```http
 PUT /documents/1/reject
 ```
@@ -707,7 +583,7 @@ PUT /documents/1/reject
 }
 ```
 
-### 6.8 Delete Document Request
+### 5.8 Delete Document Request
 ```http
 DELETE /documents/1
 ```

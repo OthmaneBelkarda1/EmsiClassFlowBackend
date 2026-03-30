@@ -4,7 +4,7 @@ from typing import Generator
 
 # Database configurations
 # Adjust the database URL according to your PostgreSQL setup
-DATABASE_URL = "postgresql://postgres:Othmane&05@localhost:5432/emsi_classflow"
+DATABASE_URL = "postgresql://postgres.wwrqrcotszuuldoqnqxh:Emsi1Emsi2Emsi3@aws-1-eu-west-2.pooler.supabase.com:5432/postgres"
 
 # Create database engine
 engine = create_engine(

@@ -2,9 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 from app.models import (
-    Room, Reservation, Exam, Incident, DocumentRequest
+    Room, Reservation, Exam, DocumentRequest
 )
-from app.routers import rooms, reservations, admin, exams, incidents, documents
+from app.routers import rooms, reservations, admin, exams, documents
 
 # Create tables if they don't exist
 Base.metadata.create_all(bind=engine)
@@ -30,7 +30,6 @@ app.include_router(rooms.router)
 app.include_router(reservations.router)
 app.include_router(admin.router)
 app.include_router(exams.router)
-app.include_router(incidents.router)
 app.include_router(documents.router)
 
 
