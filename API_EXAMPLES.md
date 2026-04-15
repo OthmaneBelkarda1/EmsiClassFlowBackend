@@ -240,8 +240,6 @@ DELETE /reservations/1
 **Response** (204 No Content):
 (Empty body)
 
----
-
 ## 3. ADMIN RESERVATIONS ENDPOINTS
 
 ### 3.1 Get Pending Reservations
